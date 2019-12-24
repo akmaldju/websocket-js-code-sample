@@ -1,0 +1,23 @@
+{
+    "name": "websocket-sample",
+    "files": [
+      "*.js"
+    ],
+    "private": true,
+    "license": "Apache-2.0",
+    "author": "Akmal Djumakhodjaev",
+    "repository": "websocket-sample",
+    "engines": {
+      "node": ">=10"
+    },
+    "scripts": {
+      "test": "mocha system-test --timeout 600000",
+      "socket": "nodemon websocket.js",
+    },
+    "dependencies": {
+      "websocket": "^1.0.31"
+    },
+    "devDependencies": {
+      "nodemon": "^1.19.3"
+    }
+  }

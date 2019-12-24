@@ -1,0 +1,27 @@
+<!-- Simple JavaScript WebSocket Client -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WebSocket Playground</title>
+  </head>
+  <body>
+    <div id="cont"><h1>JSON Objects from WebSocket will appear at the bottom:</h1></div>
+  </body>
+  <script>
+    //To connect to WebSocket 
+    const ws = new WebSocket("ws://localhost:9898/");
+    ws.onopen = function() {
+      console.log("WebSocket Client Connected");
+    // Send a message to WebSocket Server   
+      ws.send("Hi this is web client.");
+    };
+    ws.onmessage = function(e) {
+      console.log("Received: ");
+      console.log(e.data);
+      var child = document.createElement("div");
+      child.innerHTML = JSON.stringify(e.data);
+      child = child.firstChild;
+      document.getElementById("cont").appendChild(child);
+    };
+  </script>
+</html>
